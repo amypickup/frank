@@ -88,6 +88,5 @@ ENV/
 # Rope project settings
 .ropeproject
 
-.idea/misc.xml
-.idea/modules.xml
-.idea/workspace.xml
+#ide settings
+.idea/
