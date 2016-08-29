@@ -9,19 +9,15 @@ mysql = MySQL()
 app = Flask(__name__)
 
 # MySQL configurations
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'frank123'
-app.config['MYSQL_DATABASE_DB'] = 'frank'
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+app.config['MYSQL_DATABASE_USER'] = ''
+app.config['MYSQL_DATABASE_PASSWORD'] = ''
+app.config['MYSQL_DATABASE_DB'] = ''
+app.config['MYSQL_DATABASE_HOST'] = ''
 mysql.init_app(app)
 
-# yelp configuration
-auth = Oauth1Authenticator(
-    consumer_key="kNzwIei4YkuY3za1TZ7TcA",
-    consumer_secret="Uv1H4BqQZiWfk3ubVuWMxxWZZu4",
-    token="pRabtTyEwpZ6kN5oVUDnrlPh25t8sgZn",
-    token_secret="GoWVcigqEPnSsbiTXtFlSgrsDa4"
-)
+with io.open('config_secret.json') as cred:
+    creds = json.load(cred)
+    auth = Oauth1Authenticator(**creds)
 
 @app.route("/")
 def main():
