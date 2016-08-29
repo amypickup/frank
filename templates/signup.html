@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block body %}
+    <div class="jumbotron">
+        <h1>FRANKIE!</h1>
+        <form class="form-signin">
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
+
+            <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button>
+        </form>
+    </div>
+{% endblock %}

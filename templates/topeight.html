@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+{% block body %}
+    <div class="jumbotron">
+        <h1>TOP EIGHT!</h1>
+    </div>
+    <form class="form-signin">
+        <div class="row">
+            <input type="text" class="form-control col-md-2 col-sm-2" placeholder="Find" name="search-term" id="srch-term">
+            <input type="text" class="form-control col-md-2 col-sm-2" placeholder="Near" name="search-loc" id="srch-loc">
+            <button id="searchYelp" type="button" class="btn btn-primary">Search!</button>
+        </div>
+    </form>
+    <ul class=entries>
+      {% for business in businesses %}
+        <li><h2>{{ business.name }}</h2>{{ business.description }}
+      {% else %}
+        <li><em>Unbelievable.  No businesses here so far</em>
+      {% endfor %}
+    </ul>
+{% endblock %}
